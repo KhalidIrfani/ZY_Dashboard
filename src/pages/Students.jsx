@@ -168,9 +168,9 @@ const Students = () => {
                                     </thead>
                                     <tbody className="divide-y divide-gray-400">
                                         {currentData.map((studentRecord) => (
-                                            <tr key={studentRecord.id} className="odd:bg-gray-50 ">
+                                            <tr key={studentRecord.id} className="odd:bg-gray-50  ">
                                                 <td>
-                                                    <div className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{studentRecord.name}</div>
+                                                    <div className="whitespace-nowrap px-4 py-2 font-medium tex text-gray-900">{studentRecord.name}</div>
                                                 </td>
                                                 <td className='whitespace-nowrap px-4 py-2 font-medium text-gray-900'>{studentRecord.gender}</td>
                                                 <td className='whitespace-nowrap px-4 py-2 font-medium text-gray-900'>{studentRecord.age}</td>
