@@ -21,7 +21,7 @@ const SideBar = ({ setActive, isSidebarVisible }) => {
 
     const isActive = (path) => {
         return location.pathname === path
-            ? 'text-white bg-gradient-to-r from-[#3B5998] via-[#cdb4db] to-[rgba(142, 160, 255, 0)] '
+            ? 'text-white bg-[#A16EFD] '
             : '';
     };
 
@@ -29,7 +29,7 @@ const SideBar = ({ setActive, isSidebarVisible }) => {
 
     return (
         <>
-            <div className={`md:block bg-[#3B5998] text-black border-r z-30  w-[65%] md:w-[20%] md:relative absolute ${isSidebarVisible ? 'hidden' : 'block absolute'} h-screen`} id="responsiveSideBar" >
+            <div className={`md:block bg-[#312D4B] text-black border-r z-30  w-[65%] md:w-[20%] md:relative absolute ${isSidebarVisible ? 'hidden' : 'block absolute'} h-screen`} id="responsiveSideBar" >
 
                 <div className="flex justify-center py-7  text-xl text-white font-semibold  border-gray-300">
                     <Link to='/'>
@@ -41,7 +41,7 @@ const SideBar = ({ setActive, isSidebarVisible }) => {
 
                         <div onClick={() => setActive(1)}>
                             <Link to="/">
-                                <div className={`flex gap-2 items-center  py-4 px-5 text-lg font-medium cursor-pointer ${isActive('/')}`}>
+                                <div className={`flex gap-2 items-center rounded-md py-3 px-5 text-lg font-medium cursor-pointer ${isActive('/')}`}>
                                     <HiUserGroup className="text-[1.7rem]" />
                                     Students
                                 </div>

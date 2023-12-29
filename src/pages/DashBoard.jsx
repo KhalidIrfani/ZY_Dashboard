@@ -12,7 +12,7 @@ const DashBoard = ({ children }) => {
   };
   return (
     <>
-      <div className="flex bg-[#3B5998] h-screen">
+      <div className="flex bg-[#312D4B] h-screen">
 
         <SideBar active={active} setActive={setActive} isSidebarVisible={isSidebarVisible} />
 

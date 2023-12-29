@@ -39,13 +39,18 @@ const Students = () => {
             recordsSnapshot.forEach((doc) => {
                 newStudentRecords.push({ id: doc.id, ...doc.data() });
             });
-            setStudentRecords(newStudentRecords);
+
+            // Simulate a delay of 2 seconds (you can adjust this as needed)
+            setTimeout(() => {
+                setStudentRecords(newStudentRecords);
+                setLoading(false);
+            }, 3000);
         } catch (error) {
             console.error('Error fetching data:', error);
-        } finally {
             setLoading(false);
         }
     };
+
 
     useEffect(() => {
         fetchStudentRecords();
@@ -145,12 +150,12 @@ const Students = () => {
             ) : (
                 <div className="w-full md:px-10 flex gap-2 flex-wrap">
                     <div className=" w-full">
-                        <div className="px-5 text-2xl font-semibold pb-5 text-white">Students</div>
+                        <div className="px-5 text-2xl font-semibold pb-5 text-[#CECBE3]">Students</div>
                         <div className="py-5 overflow-x-auto ">
                             <div className="flex justify-between px-5 items-center text-white">
                                 <input type="file" id="csv-file" onChange={handleFileUpload} />
 
-                                <button onClick={exportToPDF} className="bg-[#B1C9F8] text-black px-3 py-2 rounded-md">
+                                <button onClick={exportToPDF} className="bg-[#A16EFD] text-white px-3 py-2 rounded-md">
                                     Export to PDF
                                 </button>
                             </div>
@@ -170,7 +175,7 @@ const Students = () => {
                                         {currentData.map((studentRecord) => (
                                             <tr key={studentRecord.id} className="odd:bg-gray-50  ">
                                                 <td>
-                                                    <div className="whitespace-nowrap px-4 py-2 font-medium tex text-gray-900">{studentRecord.name}</div>
+                                                    <div className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">{studentRecord.name}</div>
                                                 </td>
                                                 <td className='whitespace-nowrap px-4 py-2 font-medium text-gray-900'>{studentRecord.gender}</td>
                                                 <td className='whitespace-nowrap px-4 py-2 font-medium text-gray-900'>{studentRecord.age}</td>
