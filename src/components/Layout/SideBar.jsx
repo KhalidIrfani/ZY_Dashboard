@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { BiLogOut } from 'react-icons/bi';
 import { FaUserCircle } from 'react-icons/fa';
+import { FiHome } from 'react-icons/fi';
 import { HiUserGroup } from 'react-icons/hi';
 import { toast } from 'react-toastify';
 import { MdDashboard } from 'react-icons/md';
@@ -33,7 +34,10 @@ const SideBar = ({ setActive, isSidebarVisible }) => {
 
                 <div className="flex justify-center py-7  text-xl text-white font-semibold  border-gray-300">
                     <Link to='/'>
-                        Dashboard
+                        <div className="flex gap-1">
+                            <FiHome className='text-[1.5rem]' />
+                            Dashboard
+                        </div>
                     </Link>
                 </div>
                 <div className="pt-5 flex flex-col justify-between relative h-[85vh]">
