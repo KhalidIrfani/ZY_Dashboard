@@ -123,6 +123,7 @@ const Students = () => {
 
             // After updating, fetch the updated student records
             fetchStudentRecords();
+            setPopup(false)
         } catch (error) {
             console.error(error);
             toast.error('Error updating Student');
