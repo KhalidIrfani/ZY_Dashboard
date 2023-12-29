@@ -58,7 +58,7 @@ const EditForm = (props) => {
     };
 
     return (
-        <div className="w-full">
+        <div className="w-full h-[90vh]">
             {user && (
                 <Formik
                     initialValues={initialValues}
@@ -66,7 +66,7 @@ const EditForm = (props) => {
                     validationSchema={validationSchema}
                     onSubmit={handleSubmit}
                 >
-                    <Form className="py-2 rounded flex flex-wrap gap-4 px-5">
+                    <Form className="rounded flex flex-wrap px-5">
                         <div className="w-full px-5">
                             <div className='py-2'>
                                 <label htmlFor="name" className="block font-medium text-black text-sm mb-1">
@@ -76,7 +76,7 @@ const EditForm = (props) => {
                                     type="text"
                                     id="name"
                                     name="name"
-                                    className="w-full px-3 border text-black bg-[#d3d1ea] py-3 focus:outline-none focus:border-blue-500"
+                                    className="w-full px-3 border text-black bg-[#d3d1ea]  py-2 focus:outline-none focus:border-blue-500"
                                 />
                                 <ErrorMessage name="name" component="div" className="text-red-500 text-xs mt-1" />
                             </div>
@@ -88,7 +88,7 @@ const EditForm = (props) => {
                                     type="text"
                                     id="gender"
                                     name="gender"
-                                    className="w-full px-3 border text-black bg-[#d3d1ea]  py-3 focus:outline-none focus:border-blue-500"
+                                    className="w-full px-3 border text-black bg-[#d3d1ea]  py-2 focus:outline-none focus:border-blue-500"
                                 />
                                 <ErrorMessage name="gender" component="div" className="text-red-500 text-xs mt-1" />
                             </div>
@@ -100,7 +100,7 @@ const EditForm = (props) => {
                                     type="number"
                                     id="age"
                                     name="age"
-                                    className="w-full px-3 border text-black bg-[#d3d1ea]  py-3 focus:outline-none focus:border-blue-500"
+                                    className="w-full px-3 border text-black bg-[#d3d1ea]   py-2 focus:outline-none focus:border-blue-500"
                                 />
                                 <ErrorMessage name="age" component="div" className="text-red-500 text-xs mt-1" />
                             </div>
@@ -112,7 +112,7 @@ const EditForm = (props) => {
                                     type="number"
                                     id="english"
                                     name="english"
-                                    className="w-full px-3 border text-black bg-[#d3d1ea]  py-3 focus:outline-none focus:border-blue-500"
+                                    className="w-full px-3 border text-black bg-[#d3d1ea]   py-2 focus:outline-none focus:border-blue-500"
                                 />
                                 <ErrorMessage name="english" component="div" className="text-red-500 text-xs mt-1" />
                             </div>
@@ -124,7 +124,7 @@ const EditForm = (props) => {
                                     type="number"
                                     id="math"
                                     name="math"
-                                    className="w-full px-3 border text-black bg-[#d3d1ea]  py-3 focus:outline-none focus:border-blue-500"
+                                    className="w-full px-3 border text-black bg-[#d3d1ea]   py-2 focus:outline-none focus:border-blue-500"
                                 />
                                 <ErrorMessage name="math" component="div" className="text-red-500 text-xs mt-1" />
                             </div>
@@ -136,15 +136,15 @@ const EditForm = (props) => {
                                     type="number"
                                     id="science"
                                     name="science"
-                                    className="w-full px-3 border text-black bg-[#d3d1ea] py-3 focus:outline-none focus:border-blue-500"
+                                    className="w-full px-3 border text-black bg-[#d3d1ea]  py-2 focus:outline-none focus:border-blue-500"
                                 />
                                 <ErrorMessage name="science" component="div" className="text-red-500 text-xs mt-1" />
                             </div>
                         </div>
-                        <div className="w-full px-5">
+                        <div className="w-full px-5 py-2">
                             <button
                                 type="submit"
-                                className="w-full px-7 mt-3  bg-[#13326E] text-white py-3 rounded-md hover:bg-[#53bad6] focus:outline-none focus:ring focus:ring-blue-200"
+                                className="w-full px-7 bg-[#13326E] text-white  py-2 rounded-md hover:bg-[#53bad6] focus:outline-none focus:ring focus:ring-blue-200"
                             >
                                 Update Data
                             </button>
