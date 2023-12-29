@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { CgMenuLeft } from 'react-icons/cg'
 
 const AdminMenu = ({ onToggleSidebar, setActive }) => {

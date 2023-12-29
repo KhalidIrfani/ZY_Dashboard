@@ -151,22 +151,22 @@ const Students = () => {
             ) : (
                 <div className="w-full md:px-10 flex gap-2 flex-wrap">
                     <div className=" w-full">
-                        <div className="px-5 text-2xl font-semibold pb-5 text-[#CECBE3]">Students</div>
+                        <div className="px-5 text-2xl text-center items-center font-semibold text-[#CECBE3]">Student Data</div>
                         <div className="py-5 overflow-x-auto ">
-                            <div className="flex justify-between px-5 items-center text-white">
+                            <div className="md:flex justify-between px-5 items-center text-white">
                                 <input type="file" id="csv-file" onChange={handleFileUpload} />
 
-                                <button onClick={exportToPDF} className="bg-[#A16EFD] text-white px-3 py-2 rounded-md">
+                                <button onClick={exportToPDF} className="bg-[#A16EFD] md:my-0 my- text-white px-3 py-2 rounded-md">
                                     Export to PDF
                                 </button>
                             </div>
 
-                            <div className="overflow-x-auto py-5 px-5">
-                                <table className="min-w-full divide-y-2 divide-gray-200 bg-gray-300 rounded-lg shadow-sm text-sm" id="student-table">
+                            <div className="overflow-x-auto py-4 px-5">
+                                <table className="min-w-full divide-y-2 divide-gray-200 bg-gray-300 rounded-lg shadow-md text-sm" id="student-table">
                                     <thead className="ltr:text-left rtl:text-right">
                                         <tr>
                                             {tableColumns.map((column, index) => (
-                                                <th key={index} className="whitespace-nowrap px-4 py-4 font-medium text-lg text-gray-900">
+                                                <th key={index} className="whitespace-nowrap bg-[#A16EFD] text-white px-4 py-4 font-medium text-lg">
                                                     {column}
                                                 </th>
                                             ))}
@@ -186,7 +186,7 @@ const Students = () => {
                                                 <td className='whitespace-nowrap px-4 py-2 font-medium text-gray-900 flex gap-4 items-center'>
                                                     <button
                                                         onClick={() => changeStatus(studentRecord.id)}
-                                                        className="text-green-500 text-xl hover:text-green-700"
+                                                        className="text-yellow-500 text-xl hover:text-yellow-600"
                                                     >
                                                         <BiEditAlt />
                                                     </button>
