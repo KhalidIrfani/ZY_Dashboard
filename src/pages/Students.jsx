@@ -156,7 +156,7 @@ const Students = () => {
                             <div className="md:flex justify-between px-5 items-center text-white">
                                 <input type="file" id="csv-file" onChange={handleFileUpload} />
 
-                                <button onClick={exportToPDF} className="bg-[#A16EFD] md:my-0 my- text-white px-3 py-2 rounded-md">
+                                <button onClick={exportToPDF} className="bg-[#A16EFD] md:my-0 my-2 text-white px-3 py-2 rounded-md">
                                     Export to PDF
                                 </button>
                             </div>
@@ -186,7 +186,7 @@ const Students = () => {
                                                 <td className='whitespace-nowrap px-4 py-2 font-medium text-gray-900 flex gap-4 items-center'>
                                                     <button
                                                         onClick={() => changeStatus(studentRecord.id)}
-                                                        className="text-yellow-500 text-xl hover:text-yellow-600"
+                                                        className="text-[#A16EFD] text-xl hover:text-purple-700"
                                                     >
                                                         <BiEditAlt />
                                                     </button>
