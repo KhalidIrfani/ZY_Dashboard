@@ -61,7 +61,6 @@ const Students = () => {
             if (index === 0) {
                 return null; 
             }
-
             const fields = row.split(',');
             return {
                 name: fields[0],
@@ -81,22 +80,18 @@ const Students = () => {
                 console.error('Error adding document: ', error);
             }
         }
-
         toast.success('CSV data uploaded to Firebase Firestore successfully');
         fetchStudentRecords();
     };
-
     const changeStatus = (id) => {
         setPopup(true);
         setEditID(id);
     };
 
     const onDelete = async (id) => {
-        try {
-           
+        try {  
             await deleteDoc(firestoreDoc(db, 'studentRecords', id));
             setStudentRecords((prevRecords) => prevRecords.filter((student) => student.id !== id));
-
             toast.success('Student deleted successfully');
         } catch (error) {
             console.error(error);
