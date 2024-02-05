@@ -5,7 +5,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { MdDelete } from 'react-icons/md';
 import { BiEditAlt } from 'react-icons/bi';
 import { collection, addDoc, getDocs, doc as firestoreDoc, updateDoc, deleteDoc } from 'firebase/firestore';
-import { db } from '../Firebase/firebseConfig'; // Import your Firebase configuration
+import { db } from '../Firebase/firebseConfig';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import Pagination from 'rc-pagination';
@@ -18,8 +18,8 @@ const Students = () => {
     const [studentRecords, setStudentRecords] = useState([]);
     const [editID, setEditID] = useState();
     const [popup, setPopup] = useState(false);
-    const [loading, setLoading] = useState(true); // Correct initialization
-    const [pageSize] = useState(13); // Number of items per page
+    const [loading, setLoading] = useState(true); 
+    const [pageSize] = useState(13); 
     const [current, setCurrent] = useState(1);
 
     const onChange = (page) => {
@@ -40,7 +40,6 @@ const Students = () => {
                 newStudentRecords.push({ id: doc.id, ...doc.data() });
             });
 
-            // Simulate a delay of 2 seconds (you can adjust this as needed)
             setTimeout(() => {
                 setStudentRecords(newStudentRecords);
                 setLoading(false);
@@ -51,7 +50,6 @@ const Students = () => {
         }
     };
 
-
     useEffect(() => {
         fetchStudentRecords();
     }, []);
@@ -61,7 +59,7 @@ const Students = () => {
         const csvData = await csvFile.text();
         const records = csvData.split('\n').map((row, index) => {
             if (index === 0) {
-                return null; // Skip the header row
+                return null; 
             }
 
             const fields = row.split(',');
@@ -75,10 +73,7 @@ const Students = () => {
             };
         });
 
-        // Filter out null values (header row)
         const validRecords = records.filter((record) => record !== null);
-
-        // Upload valid records to Firebase Firestore
         for (const record of validRecords) {
             try {
                 await addDoc(collection(db, 'studentRecords'), record);
@@ -88,8 +83,6 @@ const Students = () => {
         }
 
         toast.success('CSV data uploaded to Firebase Firestore successfully');
-
-        // After uploading, fetch the updated student records
         fetchStudentRecords();
     };
 
@@ -100,10 +93,8 @@ const Students = () => {
 
     const onDelete = async (id) => {
         try {
-            // Send a DELETE request to delete the student by its ID
+           
             await deleteDoc(firestoreDoc(db, 'studentRecords', id));
-
-            // Remove the student record from the state
             setStudentRecords((prevRecords) => prevRecords.filter((student) => student.id !== id));
 
             toast.success('Student deleted successfully');
@@ -115,13 +106,10 @@ const Students = () => {
 
     const onEdit = async (id, updatedData) => {
         try {
-            // Update the student record in Firebase Firestore
             const studentRef = firestoreDoc(db, 'studentRecords', id);
             await updateDoc(studentRef, updatedData);
 
             toast.success('Student record updated successfully');
-
-            // After updating, fetch the updated student records
             fetchStudentRecords();
             setPopup(false)
         } catch (error) {
@@ -132,7 +120,7 @@ const Students = () => {
 
     const exportToPDF = () => {
         const doc = new jsPDF();
-        doc.autoTable({ html: '#student-table' }); // Ensure your table has the ID 'student-table'
+        doc.autoTable({ html: '#student-table' }); 
         doc.save('student.pdf');
     };
 

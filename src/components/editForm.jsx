@@ -15,7 +15,7 @@ const EditForm = (props) => {
         age: 0,
         english: 0,
         math: 0,
-        science: 0, // Corrected the field name to 'science'
+        science: 0, 
         accountStatus: '',
     });
 
@@ -38,15 +38,14 @@ const EditForm = (props) => {
         age: Yup.number().required('Required').positive('Must be a positive number'),
         english: Yup.number().required('Required').min(0, 'Must be at least 0'),
         math: Yup.number().required('Required').min(0, 'Must be at least 0'),
-        science: Yup.number().required('Required').min(0, 'Must be at least 0'), // Corrected the field name to 'science'
+        science: Yup.number().required('Required').min(0, 'Must be at least 0'), 
     });
 
     const handleSubmit = async (values) => {
         try {
             await onEdit(ID, values);
 
-            // Update the data in Firebase Firestore
-            const dbCollection = collection(db, 'studentRecords'); // Assuming you have 'db' defined for your Firebase instance
+            const dbCollection = collection(db, 'studentRecords'); 
             const userRef = doc(dbCollection, ID);
 
             await updateDoc(userRef, values);
