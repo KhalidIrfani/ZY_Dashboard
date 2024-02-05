@@ -14,8 +14,6 @@ const SideBar = ({ setActive, isSidebarVisible }) => {
             : '';
     };
 
-
-
     return (
         <>
             <div className={`md:block bg-[#28243D] text-black border-r z-30 w-[65%] md:w-[20%] md:relative absolute ${isSidebarVisible ? 'hidden' : 'block absolute'} h-screen`} id="responsiveSideBar" >
@@ -50,7 +48,6 @@ const SideBar = ({ setActive, isSidebarVisible }) => {
                                 </div>
                             </Link>
                         </div>
-
 
                         <div onClick={() => setActive(3)}>
                             <Link to="/">

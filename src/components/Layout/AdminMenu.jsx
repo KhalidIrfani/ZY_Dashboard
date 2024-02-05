@@ -5,7 +5,6 @@ const AdminMenu = ({ onToggleSidebar, setActive }) => {
 
     return (
         <>
-
             <div className="w-full pt-2 md:absolute relative top-0 right-0">
                 <div className="flex justify-between items-center py-2 md:px-5 px-2">
                     <div className="item pt-2 ">
